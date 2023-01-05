@@ -4673,11 +4673,12 @@ textarea.form-control-lg {
   font-size: 1rem;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  /* background-color: #fff; */
   border: 0;
   border-radius: 0;
   overflow-anchor: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  background-color: #efe7db;
 }
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {
@@ -4685,8 +4686,8 @@ textarea.form-control-lg {
   }
 }
 .accordion-button:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #e7f1ff;
+  /* color: #0c63e4; */
+  /* background-color: #e7f1ff; */
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
 }
 .accordion-button:not(.collapsed)::after {
@@ -4717,6 +4718,7 @@ textarea.form-control-lg {
   border-color: #86b7fe;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  background-color: #efe7db;
 }
 
 .accordion-header {
@@ -11323,12 +11325,13 @@ html {
 }
 
 .aboutbutton {
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: black;
+    background-color: #6B9362;
 }
 
 .aboutbutton:hover {
-  color: #fff;
-  background-color: #0b5ed7;
+    background-color: #93C572;
+}
+
+.abouttext {
+    padding-left: 10px !important;
 }
