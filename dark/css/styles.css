@@ -3096,7 +3096,7 @@ textarea.form-control-lg {
   color: black;
   background-color: #93C572;
 }
-.btn-check:focus + .btn-success, .btn-success:focus {
+/* .btn-check:focus + .btn-success, .btn-success:focus {
   color: #fff;
   background-color: #157347;
   border-color: #146c43;
@@ -3114,7 +3114,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #198754;
   border-color: #198754;
-}
+} */
 
 .btn-info {
   color: #000;
