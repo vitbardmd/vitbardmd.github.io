@@ -11338,6 +11338,10 @@ html {
   .aboutbutton:hover {
     background-color: #93C572;
   }
+
+  .contacttable {
+    font-size: 16x;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -11355,5 +11359,9 @@ html {
 
   .aboutbutton:hover {
     background-color: #93C572;
+  }
+
+  .contacttable {
+    font-size: 12px;
   }
 }
