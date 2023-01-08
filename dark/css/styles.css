@@ -11342,7 +11342,7 @@ html {
 @media screen and (max-width: 600px) {
   .abouttext {
     padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-right: 10px !important;
     font-size: 12px;
   }
 
