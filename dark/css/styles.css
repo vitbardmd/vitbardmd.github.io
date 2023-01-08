@@ -11322,14 +11322,36 @@ html {
     font-weight: 700;
 }
 
-.aboutbutton {
+@media screen and (min-width: 601px) {
+  .abouttext {
+      padding-right: 20px !important;
+      padding-left: 20px !important;
+      font-size: 18px;
+  }
+
+  .aboutbutton {
     background-color: #6B9362;
-}
+    font-size: 18px;
+  }
 
-.aboutbutton:hover {
+  .aboutbutton:hover {
     background-color: #93C572;
+  }
 }
 
-.abouttext {
-    padding-left: 10px !important;
+@media screen and (max-width: 600px) {
+  .abouttext {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    font-size: 12px;
+  }
+
+  .aboutbutton {
+    background-color: #6B9362;
+    font-size: 12px;
+  }
+
+  .aboutbutton:hover {
+    background-color: #93C572;
+  }
 }
