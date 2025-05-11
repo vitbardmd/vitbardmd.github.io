@@ -1,161 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Surgery - CVSA</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Surgical Procedures - Credit Valley Surgical Associates</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#2c3e50',
+                            secondary: '#3498db',
+                            accent: '#e74c3c',
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><img style="width: 200px; height: auto;" src="static/common/logo_white.png"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="surgery.html">Surgery</a></li>
-                            <li class="nav-item"><a class="nav-link" href="endoscopy.html">Endoscopy</a></li>
-                            <li class="nav-item"><a class="nav-link" href="forpatients.html">For Patients</a></li>
-                            <li class="nav-item"><a class="nav-link" href="fordoctors.html">For Doctors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
+    <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+        <!-- Navigation -->
+        <nav class="bg-primary shadow-lg fixed w-full z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-24">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="static/common/logo_white_new.png" alt="Credit Valley Surgical Associates Logo" class="h-40 w-auto">
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="text-white hover:text-secondary transition-colors">Home</a>
+                        <a href="about.html" class="text-white hover:text-secondary transition-colors">About</a>
+                        <a href="surgery.html" class="text-white hover:text-secondary transition-colors">Surgery</a>
+                        <a href="endoscopy.html" class="text-white hover:text-secondary transition-colors">Endoscopy</a>
+                        <a href="forpatients.html" class="text-white hover:text-secondary transition-colors">For Patients</a>
+                        <a href="fordoctors.html" class="text-white hover:text-secondary transition-colors">For Doctors</a>
+                        <a href="faq.html" class="text-white hover:text-secondary transition-colors">FAQ</a>
+                        <a href="contact.html" class="text-white hover:text-secondary transition-colors">Contact</a>
+                        <button id="theme-toggle" class="text-white hover:text-secondary transition-colors">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                    </div>
+                    <div class="md:hidden flex items-center space-x-4">
+                        <button id="theme-toggle-mobile" class="text-white hover:text-secondary transition-colors">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <button id="mobile-menu-button" class="text-white hover:text-secondary focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
                     </div>
                 </div>
-            </nav>
-            <!-- Header-->
-            <section class="py-5" style="background-image: url(static/common/header.png); background-size: cover; background-position: center center; background-repeat: no-repeat; background-size: auto 100%;">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder" style="color: black; font-size: 50px;">Surgery</h1>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+            
+            <!-- Menu Content -->
+            <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-primary shadow-xl">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                        <img src="static/common/logo_white.png" alt="Credit Valley Surgical Associates Logo" class="h-12 w-auto">
+                        <button onclick="toggleMobileMenu()" class="text-white hover:text-secondary focus:outline-none">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <nav class="flex-1 px-4 py-6 space-y-4">
+                        <a href="index.html" class="block text-white hover:text-secondary transition-colors py-2">Home</a>
+                        <a href="about.html" class="block text-white hover:text-secondary transition-colors py-2">About</a>
+                        <a href="surgery.html" class="block text-white hover:text-secondary transition-colors py-2">Surgery</a>
+                        <a href="endoscopy.html" class="block text-white hover:text-secondary transition-colors py-2">Endoscopy</a>
+                        <a href="forpatients.html" class="block text-white hover:text-secondary transition-colors py-2">For Patients</a>
+                        <a href="fordoctors.html" class="block text-white hover:text-secondary transition-colors py-2">For Doctors</a>
+                        <a href="faq.html" class="block text-white hover:text-secondary transition-colors py-2">FAQ</a>
+                        <a href="contact.html" class="block text-white hover:text-secondary transition-colors py-2">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="pt-32 pb-16 bg-gradient-to-r from-primary to-secondary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        Surgical Procedures
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                        Learn about our surgical procedures and access important pre and post-operative information.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Hernia Repair Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-primary dark:text-white mb-8 flex items-center">
+                    <i class="fas fa-procedures text-secondary mr-3"></i>
+                    Hernia Repair
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Inguinal Hernia -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Inguinal Hernia Repair</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">An inguinal hernia is an abnormal protrusion through a weakness in the abdominal wall into the groin. The protrusion contains a cavity (the hernial sac) which can fill with abdominal contents. Typically, hernias are more obvious when standing or straining (such as coughing, heavy lifting) forcing fatty tissue or bowel into the sac.</p>
+                            <div class="space-y-4">
+                                <a href="files/inguinal_hernia_repair.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Procedure Information
+                                </a>
+                                <a href="files/inguinal_hernia_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Umbilical Hernia -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Umbilical Hernia Repair</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">An umbilical hernia is an abnormal protrusion through a weakness in the abdominal wall which is at or near the umbilicus. The protrusion contains a cavity (the hernial sac) which can fill with abdominal contents (fat, intestines or both).</p>
+                            <div class="space-y-4">
+                                <a href="files/umbilical_hernia_repair.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Procedure Information
+                                </a>
+                                <a href="files/umbilical_hernia_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventral Hernia -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Ventral Hernia Repair</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">A ventral hernia is an abnormal protrusion through a weakness in the abdominal wall which most commonly occurs in the midline of the abdomen anywhere between the breastbone and the pubic bone.</p>
+                            <div class="space-y-4">
+                                <a href="files/ventral_hernia_repair.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Procedure Information
+                                </a>
+                                <a href="files/ventral_hernia_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- Page Content-->
-            <section class="py-5">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-xl-12">
-                            <!-- FAQ Accordion 1-->
-                            <!-- <h2 class="fw-bolder mb-3">Hemorrhoid Banding</h2> -->
-                            <!-- <div class="accordion mb-5" id="accordion1">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="oneHeadingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#oneCollapseOne" aria-expanded="false" aria-controls="oneCollapseOne"><h2 class="fw-bolder">Surgery Preparation</h2></button></h3>
-                                    <div class="accordion-collapse collapse" id="oneCollapseOne" aria-labelledby="oneHeadingOne" data-bs-parent="#accordion1">
-                                        <div class="accordion-body">
-                                            <p>How to prepare for your upcoming surgery.</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3" target="_blank" href="files/surgery_preparation_instructions.pdf">Preparation Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- FAQ Accordion 2-->
-                            <h2 class="fw-bolder mb-3">Hernia Repair</h2>
-                            <div class="accordion mb-5" id="accordion2">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="twoHeadingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#twoCollapseOne" aria-expanded="false" aria-controls="twoCollapseOne"><h4>Inguinal Hernia Repair</h4></button></h3>
-                                    <div class="accordion-collapse collapse" id="twoCollapseOne" aria-labelledby="twoHeadingOne" data-bs-parent="#accordion2">
-                                        <div class="accordion-body">
-                                            <p>An inguinal hernia is an abnormal protrusion through a weakness in the abdominal wall into the groin. The protrusion contains a cavity (the hernial sac) which can fill with abdominal contents. Typically, hernias are more obvious when standing or straining (such as coughing, heavy lifting) forcing fatty tissue or bowel into the sac.</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/inguinal_hernia_repair.pdf">Procedure Information</a>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/inguinal_hernia_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="twoHeadingTwo"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#twoCollapseTwo" aria-expanded="false" aria-controls="twoCollapseTwo"><h4>Umbilical Hernia Repair</h4></button></h3>
-                                    <div class="accordion-collapse collapse" id="twoCollapseTwo" aria-labelledby="twoHeadingTwo" data-bs-parent="#accordion2">
-                                        <div class="accordion-body">
-                                            <p>An umbilical hernia is an abnormal protrusion through a weakness in the abdominal wall which is at or near the umbilicus. The protrusion contains a cavity (the hernial sac) which can fill with abdominal contents (fat, intestines or both).</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/umbilical_hernia_repair.pdf">Procedure Information</a>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/umbilical_hernia_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="twoHeadingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#twoCollapseThree" aria-expanded="false" aria-controls="twoCollapseThree"><h4>Ventral Hernia Repair</h4></button></h3>
-                                    <div class="accordion-collapse collapse" id="twoCollapseThree" aria-labelledby="twoHeadingThree" data-bs-parent="#accordion2">
-                                        <div class="accordion-body">
-                                            <p>A ventral hernia is an abnormal protrusion through a weakness in the abdominal wall which most commonly occurs in the midline of the abdomen anywhere between the breastbone and the pubic bone.</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/ventral_hernia_repair.pdf">Procedure Information</a>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/ventral_hernia_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
+
+            <!-- Other Procedures Section -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-primary dark:text-white mb-8 flex items-center">
+                    <i class="fas fa-procedures text-secondary mr-3"></i>
+                    Other Procedures
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Gallbladder Removal -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Laparoscopic Cholecystectomy (Gallbladder Removal)</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Your gallbladder is a small organ which sits under the liver in the right upper abdomen. If the gallbladder is not working properly, small, hard deposits called gallstones can form on the inside. This is a common condition. Gallstones can cause health problems which may require surgical removal of the gallbladder.</p>
+                            <div class="space-y-4">
+                                <a href="files/lap_chole.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Procedure Information
+                                </a>
+                                <a href="files/lap_chole_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
                             </div>
-                            <!-- FAQ Accordion 3-->
-                            <div class="accordion mb-5" id="accordion3">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="threeHeadingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#threeCollapseOne" aria-expanded="false" aria-controls="threeCollapseOne"><h2 class="fw-bolder">Laparoscopic Cholecystectomy (Gallbladder Removal)</h2></button></h3>
-                                    <div class="accordion-collapse collapse" id="threeCollapseOne" aria-labelledby="threeHeadingOne" data-bs-parent="#accordion3">
-                                        <div class="accordion-body">
-                                            <p>Your gallbladder is a small organ which sits under the liver in the right upper abdomen. If the gallbladder is not working properly, small, hard deposits called gallstones can form on the inside. This is a common condition. Gallstones can cause health problems which may require surgical removal of the gallbladder.</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/lap_chole.pdf">Procedure Information</a>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/lap_chole_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Hemorrhoids -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Hemorrhoids</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Hemorrhoids are enlarged or swollen veins in the anal canal. The most common symptoms of hemorrhoids are rectal bleeding, itching, and pain. You may be able to see or feel hemorrhoids around the outside of the anus, or they may be hidden from view, inside the rectum.</p>
+                            <div class="space-y-4">
+                                <a href="files/hemorrhoids.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Procedure Information
+                                </a>
+                                <a href="files/hemorrhoids_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
                             </div>
-                            <!-- FAQ Accordion 4-->
-                            <div class="accordion mb-5" id="accordion4">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="fourHeadingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fourCollapseOne" aria-expanded="false" aria-controls="fourCollapseOne"><h2 class="fw-bolder">Hemorrhoids</h2></button></h3>
-                                    <div class="accordion-collapse collapse" id="fourCollapseOne" aria-labelledby="fourHeadingOne" data-bs-parent="#accordion4">
-                                        <div class="accordion-body">
-                                            <p>Hemorrhoids are enlarged or swollen veins in the anal canal. The most common symptoms of hemorrhoids are rectal bleeding, itching, and pain. You may be able to see or feel hemorrhoids around the outside of the anus, or they may be hidden from view, inside the rectum.</p>
-                                            <br>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/hemorrhoids.pdf">Procedure Information</a>
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/hemorrhoids_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FAQ Accordion 5-->
-                            <div class="accordion mb-5" id="accordion5">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header" id="fiveHeadingOne"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fiveCollapseOne" aria-expanded="false" aria-controls="fiveCollapseOne"><h2 class="fw-bolder">Breast Surgery</h2></button></h3>
-                                    <div class="accordion-collapse collapse" id="fiveCollapseOne" aria-labelledby="fiveHeadingOne" data-bs-parent="#accordion5">
-                                        <div class="accordion-body">
-                                            <a class="btn btn-primary btn-md px-4 me-sm-3 mt-1" target="_blank" href="files/breast_surgery_postop.pdf">Post Op Instructions</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Breast Surgery -->
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-primary dark:text-white mb-4">Breast Surgery</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Post-operative instructions are available for breast surgery procedures.</p>
+                            <div class="space-y-4">
+                                <a href="files/breast_surgery_postop.pdf" class="flex items-center text-secondary hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf mr-2"></i>
+                                    Post-Operative Instructions
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Credit Valley Surgical Associates 2022</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="contact.html">7-2155 DUNWIN DRIVE</a>
-                    </div>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="mb-2">Copyright © Credit Valley Surgical Associates 2025</p>
+                    <p>7-2155 DUNWIN DRIVE</p>
                 </div>
             </div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+        <!-- Mobile Menu Script -->
+        <script>
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+                document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+            }
+
+            document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+            // Theme toggle functionality
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                localStorage.setItem('theme', theme);
+            }
+
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.contains('dark');
+                setTheme(isDark ? 'light' : 'dark');
+            }
+
+            // Initialize theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+
+            // Add event listeners for theme toggle buttons
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+        </script>
     </body>
 </html>

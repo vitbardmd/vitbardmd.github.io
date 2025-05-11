@@ -1,136 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>About Us - CVSA</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - Credit Valley Surgical Associates</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#2c3e50',
+                            secondary: '#3498db',
+                            accent: '#e74c3c',
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><img style="width: 200px; height: auto;" src="static/common/logo_white.png"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="surgery.html">Surgery</a></li>
-                            <li class="nav-item"><a class="nav-link" href="endoscopy.html">Endoscopy</a></li>
-                            <li class="nav-item"><a class="nav-link" href="forpatients.html">For Patients</a></li>
-                            <li class="nav-item"><a class="nav-link" href="fordoctors.html">For Doctors</a></li>
-                            <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
+    <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+        <!-- Navigation -->
+        <nav class="bg-primary shadow-lg fixed w-full z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-24">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="static/common/logo_white_new.png" alt="Credit Valley Surgical Associates Logo" class="h-40 w-auto">
+                        </a>
                     </div>
-                </div>
-            </nav>
-            <!-- Header-->
-            <section class="py-5" style="background-image: url(static/common/header.png); background-size: cover; background-position: center center; background-repeat: no-repeat; background-size: auto 100%;">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="fw-bolder" style="color: black; font-size: 50px;">About Us</h1>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="text-white hover:text-secondary transition-colors">Home</a>
+                        <a href="about.html" class="text-white hover:text-secondary transition-colors">About</a>
+                        <a href="surgery.html" class="text-white hover:text-secondary transition-colors">Surgery</a>
+                        <a href="endoscopy.html" class="text-white hover:text-secondary transition-colors">Endoscopy</a>
+                        <a href="forpatients.html" class="text-white hover:text-secondary transition-colors">For Patients</a>
+                        <a href="fordoctors.html" class="text-white hover:text-secondary transition-colors">For Doctors</a>
+                        <a href="faq.html" class="text-white hover:text-secondary transition-colors">FAQ</a>
+                        <a href="contact.html" class="text-white hover:text-secondary transition-colors">Contact</a>
+                        <button id="theme-toggle" class="text-white hover:text-secondary transition-colors">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
                     </div>
-                </div>
-            </section>
-            <!-- About section one-->
-            <section class="py-5" id="scroll-target">
-                <div class="container">
-                    <div class="d-flex align-items-start">
-                        <div class="col-2 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-1" type="button" role="tab" aria-controls="v-pills-1" aria-selected="true">Dr. Vitaly Bard</button>
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-2" type="button" role="tab" aria-controls="v-pills-2" aria-selected="false">Dr. Deepa Kumar</button>
-                            <!-- <button class="aboutbutton mt-3 py-1" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Dr. Alana Hosein</button> -->
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-3-tab" data-bs-toggle="pill" data-bs-target="#v-pills-3" type="button" role="tab" aria-controls="v-pills-3" aria-selected="false">Dr. Andrew Burns</button>
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-4-tab" data-bs-toggle="pill" data-bs-target="#v-pills-4" type="button" role="tab" aria-controls="v-pills-4" aria-selected="false">Dr. Patrick Tawadros</button>
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-5-tab" data-bs-toggle="pill" data-bs-target="#v-pills-5" type="button" role="tab" aria-controls="v-pills-5" aria-selected="false">Dr. Neil Woolfson</button>
-                            <button class="aboutbutton mt-3 py-1" id="v-pills-6-tab" data-bs-toggle="pill" data-bs-target="#v-pills-6" type="button" role="tab" aria-controls="v-pills-6" aria-selected="false">Dr. Arash Azin</button>
-                        </div>
-                        <div class="abouttext tab-content col-10" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-                                <p>
-                                    Dr. Vitaly Bard obtained his Honours Bachelor of Science in Immunology in 1989 and earned his Medical Degree at the University of Toronto in 1993.  He completed his residency in General Surgery at University of Toronto and became a Fellow of the Royal College of Physicians and Surgeons of Canada and a Fellow of the American College of Surgeons in 1998.  He subsequently completed a fellowship in Advanced Minimally Invasive Surgery at McMaster University before joining Credit Valley Hospital as a staff surgeon in 1999.  He is also a Lecturer for the University of Toronto Medical School.
-                                </p>
-                                <p>
-                                    Dr. Bard sees patients for a variety of surgical problems including gallbladder disease, hernias, diseases of stomach and colon with a particular focus on the minimally invasive approach to most surgical problems.
-                                </p>
-                                <p>
-                                    When not at the hospital, Dr. Bard enjoys time with his family, travelling, gardening and walking his tiny dog.
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-                                <p>
-                                    Dr. Deepa Kumar completed medical school at The University of Toronto in 1997. Afterwards, she entered General Surgery residency at the University of Toronto and in 2002 earned her FRCSC.  Subsequently, she did a two-year Royal College Fellowship in Surgical Oncology and Minimally Invasive Surgery also at the University of Toronto.
-                                </p>
-                                <p>
-                                    Dr. Kumar has been affiliated with Credit Valley Hospital and Trillium Health Partners since 2002. She is currently the Division Head of General Surgery and Medical Director of the Breast Diagnostic Assessment Program. In addition, she is an Adjunct Lecturer at the University of Toronto Medical School.
-                                </p>
-                                <p>
-                                    The focus of Dr. Kumar's practice includes Breast Cancer and some Benign Breast Disease as well as Benign General Surgery and Endoscopy.
-                                </p>
-                                <p>
-                                    Outside of her surgical practice Dr. Kumar enjoys time with her family, skiing, yoga and baking.
-                                </p>
-                            </div>
-                            <!-- <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-                                <p>
-                                    Dr. Alana Hosein graduated with an Honours Bachelor of Science in 1999 and Master of Science in 2002, both from the University of Toronto. She then completed medical school at McMaster University in 2005. In 2012, she earned her FRCSC after finishing General Surgery Residency at McMaster University. She worked as an Acute Care Surgeon for three years and then completed a fellowship in Breast Surgical Oncology at the University of Toronto.
-                                </p>
-                                <p>
-                                    Dr. Hosein joined Credit Valley Hospital as a staff surgeon in 2017. She has been affiliated with University of Toronto Medical School since 2013 where she has earned the title of Assistant Professor. Currently, she is the Credit Valley Site General Surgery Education Lead.
-                                </p>
-                                <p>
-                                    Dr. Hosein's practice focuses on breast cancer, prophylactic breast surgery for genetic mutations, some benign breast diseases, as well as benign general surgery such as gallbladders and hernias.
-                                </p>
-                                <p>
-                                    Outside of medicine, Dr. Hosein enjoys various outdoor activities with her family and dog.
-                                </p>
-                            </div> -->
-                            <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-                                <p>
-                                    Dr. Burns is an alumnus of the University of Guelph, going on to finish medical school at the University of Toronto. He completed a residency in General Surgery at the University of Toronto in 2004 and then went on to additional fellowship training in Surgical Oncology. Awards to his credit include the gold medal in surgery from the University of Toronto, and numerous teaching awards.
-                                </p>
-                                <p>
-                                    His surgical practise is divided equally between complex GI cancer surgery, with a particular focus on laparoscopic GI surgery, and general surgical interests such as gallbladder surgery and hernia repairs.
-                                </p>
-                                <p>
-                                    Outside of work he is an avid Formula One fan and has been noted to have the peculiar talent of knowing at least one line from almost every song ever written.
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-4" role="tabpanel" aria-labelledby="v-pills-4-tab">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-5" role="tabpanel" aria-labelledby="v-pills-5-tab">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-6-tab">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Credit Valley Surgical Associates 2022</div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" href="contact.html">7-2155 DUNWIN DRIVE</a>
+                    <div class="md:hidden flex items-center space-x-4">
+                        <button id="theme-toggle-mobile" class="text-white hover:text-secondary transition-colors">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <button id="mobile-menu-button" class="text-white hover:text-secondary focus:outline-none">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
                     </div>
                 </div>
             </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+            
+            <!-- Menu Content -->
+            <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-primary shadow-xl">
+                <div class="flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                        <img src="static/common/logo_white.png" alt="Credit Valley Surgical Associates Logo" class="h-12 w-auto">
+                        <button onclick="toggleMobileMenu()" class="text-white hover:text-secondary focus:outline-none">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                    </div>
+                    <nav class="flex-1 px-4 py-6 space-y-4">
+                        <a href="index.html" class="block text-white hover:text-secondary transition-colors py-2">Home</a>
+                        <a href="about.html" class="block text-white hover:text-secondary transition-colors py-2">About</a>
+                        <a href="surgery.html" class="block text-white hover:text-secondary transition-colors py-2">Surgery</a>
+                        <a href="endoscopy.html" class="block text-white hover:text-secondary transition-colors py-2">Endoscopy</a>
+                        <a href="forpatients.html" class="block text-white hover:text-secondary transition-colors py-2">For Patients</a>
+                        <a href="fordoctors.html" class="block text-white hover:text-secondary transition-colors py-2">For Doctors</a>
+                        <a href="faq.html" class="block text-white hover:text-secondary transition-colors py-2">FAQ</a>
+                        <a href="contact.html" class="block text-white hover:text-secondary transition-colors py-2">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="pt-32 pb-16 bg-gradient-to-r from-primary to-secondary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        About Our Surgeons
+                    </h1>
+                    <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                        Meet our team of highly trained and experienced general surgeons at Credit Valley Surgical Associates.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dr. Vitaly Bard -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Vitaly Bard</h2>
+                        </div>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                            <p>Dr. Vitaly Bard obtained his Honours Bachelor of Science in Immunology in 1989 and earned his Medical Degree at the University of Toronto in 1993. He completed his residency in General Surgery at University of Toronto and became a Fellow of the Royal College of Physicians and Surgeons of Canada and a Fellow of the American College of Surgeons in 1998.</p>
+                            <p>He subsequently completed a fellowship in Advanced Minimally Invasive Surgery at McMaster University before joining Credit Valley Hospital as a staff surgeon in 1999. He is also a Lecturer for the University of Toronto Medical School.</p>
+                            <p>Dr. Bard sees patients for a variety of surgical problems including gallbladder disease, hernias, diseases of stomach and colon with a particular focus on the minimally invasive approach to most surgical problems.</p>
+                            <p class="italic">When not at the hospital, Dr. Bard enjoys time with his family, travelling, gardening and walking his tiny dog.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Deepa Kumar -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Deepa Kumar</h2>
+                        </div>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                            <p>Dr. Deepa Kumar completed medical school at The University of Toronto in 1997. Afterwards, she entered General Surgery residency at the University of Toronto and in 2002 earned her FRCSC. Subsequently, she did a two-year Royal College Fellowship in Surgical Oncology and Minimally Invasive Surgery also at the University of Toronto.</p>
+                            <p>Dr. Kumar has been affiliated with Credit Valley Hospital and Trillium Health Partners since 2002. She is currently the Division Head of General Surgery and Medical Director of the Breast Diagnostic Assessment Program. In addition, she is an Adjunct Lecturer at the University of Toronto Medical School.</p>
+                            <p>The focus of Dr. Kumar's practice includes Breast Cancer and some Benign Breast Disease as well as Benign General Surgery and Endoscopy.</p>
+                            <p class="italic">Outside of her surgical practice Dr. Kumar enjoys time with her family, skiing, yoga and baking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Andrew Burns -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Andrew Burns</h2>
+                        </div>
+                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                            <p>Dr. Burns is an alumnus of the University of Guelph, going on to finish medical school at the University of Toronto. He completed a residency in General Surgery at the University of Toronto in 2004 and then went on to additional fellowship training in Surgical Oncology. Awards to his credit include the gold medal in surgery from the University of Toronto, and numerous teaching awards.</p>
+                            <p>His surgical practise is divided equally between complex GI cancer surgery, with a particular focus on laparoscopic GI surgery, and general surgical interests such as gallbladder surgery and hernia repairs.</p>
+                            <p class="italic">Outside of work he is an avid Formula One fan and has been noted to have the peculiar talent of knowing at least one line from almost every song ever written.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Patrick Tawadros -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Patrick Tawadros</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Neil Woolfson -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Neil Woolfson</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Arash Azin -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden tborder border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-md text-3xl text-secondary mr-3"></i>
+                            <h2 class="text-2xl font-bold text-primary dark:text-white">Dr. Arash Azin</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-primary text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <p class="mb-2">Copyright © Credit Valley Surgical Associates 2025</p>
+                    <p>7-2155 DUNWIN DRIVE</p>
+                </div>
+            </div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+        <!-- Mobile Menu Script -->
+        <script>
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+                document.body.style.overflow = mobileMenu.classList.contains('hidden') ? 'auto' : 'hidden';
+            }
+
+            document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+            // Theme toggle functionality
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                localStorage.setItem('theme', theme);
+            }
+
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.contains('dark');
+                setTheme(isDark ? 'light' : 'dark');
+            }
+
+            // Initialize theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+
+            // Add event listeners for theme toggle buttons
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+        </script>
     </body>
 </html>
